@@ -7,10 +7,18 @@ description: Use when the user asks to visualize a diagram, flowchart, sequence 
 
 Render Mermaid diagrams as ASCII/Unicode art in the terminal using `beautiful-mermaid`.
 
+## Setup
+
+On first use, install dependencies (one-time):
+
+```bash
+cd "$(dirname "$(readlink -f ~/.claude/skills/ascii-diagram/SKILL.md)" 2>/dev/null || echo ~/.claude/skills/ascii-diagram)" && npm install --silent
+```
+
 ## How to Use
 
 ```bash
-npx ascii-diagram --no-color -e $'graph TD\n  A[Start] --> B{Decision}\n  B -->|Yes| C[Do it]\n  B -->|No| D[End]'
+node ~/.claude/skills/ascii-diagram/cli.mjs --no-color -e $'graph TD\n  A[Start] --> B{Decision}\n  B -->|Yes| C[Do it]\n  B -->|No| D[End]'
 ```
 
 **Important:** Requires multiline Mermaid syntax. Use `$'...\n...'` for newlines — semicolons don't work.
@@ -41,6 +49,7 @@ npx ascii-diagram --no-color -e $'graph TD\n  A[Start] --> B{Decision}\n  B -->|
 
 ## Workflow
 
-1. Write valid multiline Mermaid syntax
-2. Run with `--no-color -e $'...'`
-3. Show output; iterate if needed
+1. Ensure dependencies are installed (run Setup if `node_modules` missing)
+2. Write valid multiline Mermaid syntax
+3. Run `cli.mjs` with `--no-color -e $'...'`
+4. Show output; iterate if needed
