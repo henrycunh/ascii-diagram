@@ -1,0 +1,29 @@
+{
+  "name": "ascii-diagram",
+  "version": "1.0.0",
+  "description": "Render Mermaid diagrams as ASCII/Unicode art in the terminal",
+  "type": "module",
+  "bin": {
+    "ascii-diagram": "./cli.mjs"
+  },
+  "files": [
+    "cli.mjs",
+    "SKILL.md"
+  ],
+  "keywords": [
+    "mermaid",
+    "ascii",
+    "diagram",
+    "flowchart",
+    "terminal",
+    "cli",
+    "unicode",
+    "sequence-diagram",
+    "state-diagram",
+    "claude-skill"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "beautiful-mermaid": "^1.1.3"
+  }
+}
